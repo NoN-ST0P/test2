@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Need to create a chrone job in linux to schedule a check for any Github update 
+# Need to  create a chrone job in linux to schedule a check for any Github update 
 # 0 * * * * /root/snap/test.sh >> /root/snap/Checklog.txt 2>&1
 # This will check in minute 00 every houre for a new update
 OWNER="NoN-ST0P"
