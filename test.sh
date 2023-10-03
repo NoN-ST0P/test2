@@ -1,8 +1,9 @@
+#!/bin/bash
 OWNER="NoN-ST0P"
 REPO="test2"
 BRANCH="teeest"
 API_URL="https://api.github.com/repos/$OWNER/$REPO/branches/$BRANCH"
-LAST_COMMIT_FILE=".last_commit"
+LAST_COMMIT_FILE="x.last_commit"
 if [ -f "$LAST_COMMIT_FILE" ]; then
     LAST_COMMIT=$(cat "$LAST_COMMIT_FILE")
 else
@@ -12,7 +13,6 @@ fi
 # Retrieve the latest commit information for the branch
 
 LATEST_COMMIT=$(curl -s "$API_URL" | jq -r '.commit.sha')
-
 # Compare the latest commit SHA with the stored value
 if [ "$LATEST_COMMIT" != "$LAST_COMMIT" ]; then
     echo "Changes detected in the repository!"
