@@ -9,7 +9,7 @@ if [ -f "$LAST_COMMIT_FILE" ]; then
 else
     LAST_COMMIT=""
 fi
-
+ 
 # Retrieve the latest commit information for the branch
 
 LATEST_COMMIT=$(curl -s "$API_URL" | jq -r '.commit.sha')
